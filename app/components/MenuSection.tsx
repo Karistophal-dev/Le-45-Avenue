@@ -468,26 +468,27 @@ export default function MenuSection() {
       {/* Featured item */}
       {featured && (
         <div
-          className="featured-card"
+          className={`featured-card${(featured as Item).image ? "" : " featured-card-no-img"}`}
           style={{
             background: "#161616",
             borderLeft: "3px solid #E8671A",
           }}
         >
           <div className="featured-card-text">
-            <p
-              style={{
-                fontFamily: "var(--font-poppins)",
-                fontWeight: 700,
-                fontSize: 10,
-                letterSpacing: "0.24em",
-                textTransform: "uppercase",
-                color: "#E8671A",
-              }}
-            >
-              — en vedette
-            </p>
             <div>
+              <p
+                style={{
+                  fontFamily: "var(--font-poppins)",
+                  fontWeight: 700,
+                  fontSize: 10,
+                  letterSpacing: "0.24em",
+                  textTransform: "uppercase",
+                  color: "#E8671A",
+                  marginBottom: 20,
+                }}
+              >
+                — en vedette
+              </p>
               <h3
                 style={{
                   fontFamily: "var(--font-poppins)",
@@ -503,12 +504,13 @@ export default function MenuSection() {
               {(featured as Item).desc && (
                 <p
                   style={{
-                    marginTop: 10,
+                    marginTop: 14,
                     fontFamily: "var(--font-poppins)",
                     fontWeight: 400,
                     fontSize: 13,
                     color: "#666",
                     lineHeight: 1.65,
+                    maxWidth: 340,
                   }}
                 >
                   {(featured as Item).desc}
@@ -522,6 +524,7 @@ export default function MenuSection() {
                 fontSize: "clamp(26px, 2.8vw, 40px)",
                 color: "#F5C842",
                 letterSpacing: "-0.02em",
+                marginTop: 28,
               }}
             >
               {(featured as Item).price}
@@ -529,19 +532,20 @@ export default function MenuSection() {
           </div>
 
           {(featured as Item).image && (
-            <div className="featured-card-img">
+            <div style={{ position: "relative", overflow: "hidden" }}>
               <Image
                 src={(featured as Item).image!}
                 alt={(featured as Item).name}
                 fill
-                sizes="(max-width: 767px) 100vw, 80vw"
+                sizes="(max-width: 767px) 40vw, 25vw"
                 style={{ objectFit: "cover", objectPosition: "center" }}
               />
               <div
                 style={{
                   position: "absolute",
                   inset: 0,
-                  background: "linear-gradient(to bottom, #161616 0%, transparent 35%)",
+                  background:
+                    "linear-gradient(to right, #161616 0%, transparent 40%)",
                 }}
               />
               <p

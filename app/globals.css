@@ -189,36 +189,31 @@ button {
 /* ── Featured card ────────────────────────────────────────── */
 .featured-card {
   margin: 0 16px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  min-height: 180px;
+  grid-template-columns: 3fr 2fr;
 }
 @media (min-width: 768px) {
   .featured-card {
     margin: 0 10vw;
+    min-height: 320px;
+    grid-template-columns: 1fr 1fr;
   }
+}
+
+.featured-card-no-img {
+  grid-template-columns: 1fr;
 }
 
 .featured-card-text {
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: space-between;
 }
 @media (min-width: 768px) {
   .featured-card-text {
-    padding: 36px 40px;
-    gap: 28px;
-  }
-}
-
-.featured-card-img {
-  position: relative;
-  height: 200px;
-  overflow: hidden;
-}
-@media (min-width: 768px) {
-  .featured-card-img {
-    height: 280px;
+    padding: 44px 40px;
   }
 }
 
