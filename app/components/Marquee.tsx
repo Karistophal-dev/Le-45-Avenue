@@ -29,11 +29,8 @@ export default function Marquee() {
         overflow: "hidden",
       }}
     >
-      <div
-        className="marquee-inner"
-        style={{ animation: "marquee-scroll 24s linear infinite" }}
-      >
-        {[0, 1].flatMap((copy) =>
+      <div className="marquee-inner">
+        {[0, 1, 2, 3, 4, 5, 6, 7].flatMap((copy) =>
           PHRASES.map((phrase) => (
             <span key={`${copy}-${phrase}`} style={itemStyle}>
               {phrase}

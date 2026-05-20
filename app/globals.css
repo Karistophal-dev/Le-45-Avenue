@@ -35,14 +35,14 @@ button {
 
 @keyframes marquee-scroll {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-12.5%); }
 }
 
 .marquee-inner {
   display: flex;
   width: max-content;
   white-space: nowrap;
-  animation: marquee-scroll 90s linear infinite;
+  animation: marquee-scroll 24s linear infinite;
 }
 
 @keyframes pulse-dot {
@@ -190,14 +190,15 @@ button {
 .featured-card {
   margin: 0 16px;
   display: grid;
-  min-height: 180px;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 200px;
 }
 @media (min-width: 768px) {
   .featured-card {
     margin: 0 10vw;
-    min-height: 320px;
+    min-height: 260px;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: unset;
   }
 }
 

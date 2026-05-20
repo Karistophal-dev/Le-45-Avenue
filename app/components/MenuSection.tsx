@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 type Item = {
@@ -357,6 +357,14 @@ const MENU: Category[] = [
 
 export default function MenuSection() {
   const [active, setActive] = useState(0);
+  const tabsScrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = tabsScrollRef.current;
+    if (!container) return;
+    const btns = container.querySelectorAll("button");
+    btns[active]?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+  }, [active]);
 
   const category = MENU[active];
 
@@ -418,12 +426,13 @@ export default function MenuSection() {
         </div>
 
         {/* Tabs — horizontal scroll on mobile */}
+        <div style={{ position: "relative", marginBottom: 64 }}>
         <div
+          ref={tabsScrollRef}
           style={{
             overflowX: "auto",
             scrollbarWidth: "none",
             paddingBottom: 4,
-            marginBottom: 64,
           }}
         >
           <div
@@ -462,6 +471,19 @@ export default function MenuSection() {
               </button>
             ))}
           </div>
+        </div>
+        {/* Fade hint — right edge */}
+        <div
+          style={{
+            position: "absolute",
+            right: 0,
+            top: 0,
+            bottom: 4,
+            width: 56,
+            background: "linear-gradient(to right, transparent, #111111)",
+            pointerEvents: "none",
+          }}
+        />
         </div>
       </div>
 
