@@ -187,7 +187,7 @@ const MENU: Category[] = [
           { name: "Spicy Hot", desc: "Sauce tomate, mozzarella, viande hachée, tomates fraîches, piment" },
           { name: "Splendide", desc: "Sauce tomate, mozzarella, poivrons, pepperoni, jambon, viande hachée" },
           { name: "La Provençale", desc: "Sauce tomate, mozzarella, origan, herbes de provence, oignons, tomates fraîches, champignons" },
-          { name: "Norvégienne", desc: "Sauce tomate, double mozzarella, saumon, crème fraîche", featured: true },
+          { name: "Norvégienne", desc: "Sauce tomate, double mozzarella, saumon, crème fraîche", featured: true, image: "/food/pizza.png", },
         ],
       },
       {
@@ -348,24 +348,6 @@ export default function MenuSection() {
           >
             Notre Carte
           </h2>
-          {category.note && !category.subsections.some((s) => s.label) && category.note !== "seul / en menu" && (
-            <p
-              style={{
-                fontFamily: "var(--font-poppins)",
-                fontWeight: 600,
-                fontSize: 11,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#C8873A",
-                background: "rgba(232, 103, 26, 0.08)",
-                border: "1px solid rgba(232, 103, 26, 0.25)",
-                borderRadius: 4,
-                padding: "5px 12px",
-              }}
-            >
-              {category.note}
-            </p>
-          )}
         </div>
 
         {/* Tabs — horizontal scroll on mobile */}
@@ -621,6 +603,25 @@ export default function MenuSection() {
                       </span>
                     )}
                   </div>
+                  {si === 0 && category.note && category.note !== "seul / en menu" &&
+  !category.subsections.some(s => s.note === "seul / en menu") && (
+  <p style={{
+    fontFamily: "var(--font-poppins)",
+    fontWeight: 600,
+    fontSize: 11,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase",
+    color: "#C8873A",
+    background: "rgba(232, 103, 26, 0.08)",
+    border: "1px solid rgba(232, 103, 26, 0.25)",
+    borderRadius: 4,
+    padding: "5px 12px",
+    flexShrink: 0,
+    whiteSpace: "nowrap",
+  }}>
+    {category.note}
+  </p>
+)}
                   {((si === 0 && category.note === "seul / en menu") ||
                     section.note === "seul / en menu") && (
                     <div
