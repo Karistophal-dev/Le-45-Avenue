@@ -26,43 +26,6 @@ type Category = {
 
 const MENU: Category[] = [
   {
-    label: "TACOS BOWL",
-    subsections: [
-      {
-        note: "Servi avec frites et sauce fromagère maison",
-        items: [
-          {
-            name: "Bowl Tenders & Bacon de Boeuf",
-            price: "10,90 €",
-            desc: "Tenders, bacon, sauce cheddar, emmental",
-            featured: true,
-            image: "/food/bowl.png",
-          },
-          {
-            name: "Bowl Kebab",
-            price: "10,90 €",
-            desc: "Émincé de kebab, cheddar, oignons frits",
-          },
-          {
-            name: "Escalope Boursin",
-            price: "10,90 €",
-            desc: "Escalope de poulet nature, boursin",
-          },
-          {
-            name: "Chicken Curry",
-            price: "10,90 €",
-            desc: "Émincé de poulet au curry, fromage",
-          },
-          {
-            name: "Bowl CB",
-            price: "10,90 €",
-            desc: "Cordon bleu, emmental, cheddar",
-          },
-        ],
-      },
-    ],
-  },
-  {
     label: "BURGERS",
     note: "seul / en menu",
     subsections: [
@@ -108,7 +71,7 @@ const MENU: Category[] = [
       },
     ],
   },
-  {
+    {
     label: "TACOS",
     subsections: [
       {
@@ -136,6 +99,43 @@ const MENU: Category[] = [
           { name: "Œuf", price: "1,50 €" },
           { name: "Jambon de dinde", price: "1,50 €" },
           { name: "Miel", price: "1,50 €" },
+        ],
+      },
+    ],
+  },
+  {
+    label: "TACOS BOWL",
+    subsections: [
+      {
+        note: "Servi avec frites et sauce fromagère maison",
+        items: [
+          {
+            name: "Bowl Tenders & Bacon de Boeuf",
+            price: "10,90 €",
+            desc: "Tenders, bacon, sauce cheddar, emmental",
+            featured: true,
+            image: "/food/bowl.png",
+          },
+          {
+            name: "Bowl Kebab",
+            price: "10,90 €",
+            desc: "Émincé de kebab, cheddar, oignons frits",
+          },
+          {
+            name: "Escalope Boursin",
+            price: "10,90 €",
+            desc: "Escalope de poulet nature, boursin",
+          },
+          {
+            name: "Chicken Curry",
+            price: "10,90 €",
+            desc: "Émincé de poulet au curry, fromage",
+          },
+          {
+            name: "Bowl CB",
+            price: "10,90 €",
+            desc: "Cordon bleu, emmental, cheddar",
+          },
         ],
       },
     ],
