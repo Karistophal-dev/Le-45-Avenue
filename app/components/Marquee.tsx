@@ -1,43 +1,38 @@
-const PHRASES = [
-  "Veau braisé à la broche",
-  "Burgers faits maison",
-  "Tacos fromagés au four",
-];
-
-const itemStyle = {
-  display: "inline-flex",
-  alignItems: "center",
-  gap: 28,
-  paddingRight: 28,
-  fontFamily: "var(--font-poppins)",
-  fontWeight: 700,
-  fontSize: 12,
-  letterSpacing: "0.14em",
-  textTransform: "uppercase",
-  color: "#F0EBE3",
-  whiteSpace: "nowrap",
-};
-
 export default function Marquee() {
+  const items = Array.from({ length: 16 });
+
   return (
     <div
       style={{
-        borderTop: "1px solid #1E1E1E",
-        borderBottom: "1px solid #1E1E1E",
+        borderTop: "1px solid #2C1A0E",
+        borderBottom: "1px solid #2C1A0E",
         padding: "20px 0",
-        background: "#111111",
+        background: "#2C1A0E",
         overflow: "hidden",
       }}
     >
       <div className="marquee-inner">
-        {[0, 1, 2, 3, 4, 5, 6, 7].flatMap((copy) =>
-          PHRASES.map((phrase) => (
-            <span key={`${copy}-${phrase}`} style={itemStyle}>
-              {phrase}
-              <span style={{ color: "#E8671A", fontSize: "0.7em" }}>◆</span>
-            </span>
-          ))
-        )}
+        {items.map((_, i) => (
+          <span
+            key={i}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 28,
+              paddingRight: 28,
+              fontFamily: "var(--font-poppins)",
+              fontWeight: 700,
+              fontSize: 22,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              whiteSpace: "nowrap",
+            }}
+          >
+            <span style={{ color: "#dfc194" }}>DELICIOUS</span>
+            <span style={{ color: "#f7ebd1" }}>MENU</span>
+            <span style={{ color: "#dfc194", fontSize: "0.35em" }}>◆</span>
+          </span>
+        ))}
       </div>
     </div>
   );

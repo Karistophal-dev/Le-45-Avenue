@@ -2,10 +2,11 @@
 
 @theme {
   --color-dark: #111111;
-  --color-orange: #E8671A;
+  --color-orange: #C8873A;
   --color-yellow: #F5C842;
   --color-cream: #F0EBE3;
 }
+
 
 *,
 *::before,
@@ -95,7 +96,7 @@ button {
 }
 
 .hero-title {
-  font-size: clamp(52px, 14vw, 72px);
+  font-size: clamp(72px, 14vw, 72px);
 }
 @media (min-width: 768px) {
   .hero-title {
@@ -255,7 +256,7 @@ button {
   }
 
   .mobile-cta-order {
-    background: #E8671A;
+    background: #C8873A;
     color: #111111;
   }
 

@@ -3,53 +3,47 @@
 import { useEffect, useState } from "react";
 
 const SCHEDULE = [
-  {
-    day: "Lundi",
-    slots: [
-      { open: "11:00", close: "14:50" },
-      { open: "18:00", close: "22:30" },
-    ],
-  },
+  { day: "Lundi", slots: null },
   {
     day: "Mardi",
     slots: [
-      { open: "11:00", close: "14:30" },
-      { open: "18:00", close: "22:30" },
+      { open: "11:00", close: "15:00" },
+      { open: "18:00", close: "23:00" },
     ],
   },
   {
     day: "Mercredi",
     slots: [
-      { open: "11:00", close: "14:30" },
-      { open: "18:00", close: "22:30" },
+      { open: "11:00", close: "15:00" },
+      { open: "18:00", close: "23:00" },
     ],
   },
   {
     day: "Jeudi",
     slots: [
-      { open: "11:00", close: "14:30" },
-      { open: "18:00", close: "22:35" },
+      { open: "11:00", close: "15:00" },
+      { open: "18:00", close: "23:00" },
     ],
   },
   {
     day: "Vendredi",
     slots: [
-      { open: "11:00", close: "14:30" },
-      { open: "18:00", close: "22:30" },
+      { open: "11:00", close: "15:00" },
+      { open: "18:00", close: "23:00" },
     ],
   },
   {
     day: "Samedi",
     slots: [
-      { open: "11:00", close: "14:30" },
-      { open: "18:00", close: "22:30" },
+      { open: "11:00", close: "15:00" },
+      { open: "18:00", close: "23:00" },
     ],
   },
   {
     day: "Dimanche",
     slots: [
-      { open: "11:00", close: "14:30" },
-      { open: "18:00", close: "22:30" },
+      { open: "11:00", close: "15:00" },
+      { open: "18:00", close: "23:00" },
     ],
   },
 ];
@@ -66,9 +60,9 @@ function getStatus() {
 
   const mins = now.getHours() * 60 + now.getMinutes();
   const day = SCHEDULE[dayIndex];
-  const open = day.slots.some(
+  const open = day.slots?.some(
     (s) => mins >= parseTime(s.open) && mins < parseTime(s.close)
-  );
+  ) ?? false;
 
   return { dayIndex, open };
 }
@@ -104,7 +98,7 @@ export default function Horaires() {
       >
         <h2
           style={{
-            fontFamily: "var(--font-pacifico)",
+            fontFamily: "var(--font-bebas)",
             fontSize: "clamp(48px, 8vw, 112px)",
             color: "#F0EBE3",
             lineHeight: 1,
@@ -121,8 +115,8 @@ export default function Horaires() {
               fontSize: 10,
               letterSpacing: "0.22em",
               textTransform: "uppercase",
-              color: status.open ? "#E8671A" : "#777",
-              border: `1px solid ${status.open ? "#E8671A" : "#2A2A2A"}`,
+              color: status.open ? "#C8873A" : "#777",
+              border: `1px solid ${status.open ? "#C8873A" : "#2A2A2A"}`,
               padding: "8px 20px",
             }}
           >
@@ -135,8 +129,8 @@ export default function Horaires() {
       <div>
         {SCHEDULE.map((item, i) => {
           const isToday = status?.dayIndex === i;
-          const s1 = item.slots[0];
-          const s2 = item.slots[1];
+          const s1 = item.slots?.[0];
+          const s2 = item.slots?.[1];
 
           return (
             <div
@@ -181,9 +175,15 @@ export default function Horaires() {
                   fontVariantNumeric: "tabular-nums",
                 }}
               >
-                {s1.open}–{s1.close}
-                <span style={{ color: "#777", margin: "0 12px" }}>/</span>
-                {s2.open}–{s2.close}
+                {item.slots == null ? (
+                  "Fermé"
+                ) : (
+                  <>
+                    {s1!.open}–{s1!.close}
+                    <span style={{ color: "#777", margin: "0 12px" }}>/</span>
+                    {s2!.open}–{s2!.close}
+                  </>
+                )}
               </span>
             </div>
           );

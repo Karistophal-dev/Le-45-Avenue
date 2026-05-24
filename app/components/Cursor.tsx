@@ -41,7 +41,7 @@ export default function Cursor() {
         position: "fixed",
         width: 10,
         height: 10,
-        background: "#E8671A",
+        background: "#C8873A",
         borderRadius: "50%",
         pointerEvents: "none",
         zIndex: 9999,

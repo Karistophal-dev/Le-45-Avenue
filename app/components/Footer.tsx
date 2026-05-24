@@ -13,13 +13,13 @@ export default function Footer() {
     >
       <span
         style={{
-          fontFamily: "var(--font-pacifico)",
+          fontFamily: "var(--font-bebas)",
           fontSize: 36,
           color: "#F0EBE3",
           letterSpacing: "0.01em",
         }}
       >
-        Pacy Palace
+        Le 45 Avenue
       </span>
 
       <p
@@ -32,7 +32,7 @@ export default function Footer() {
           color: "#777",
         }}
       >
-        © {new Date().getFullYear()} Pacy Palace · Pacy-sur-Eure
+        © {new Date().getFullYear()} Le 45 Avenue · Vernon
       </p>
     </footer>
   );

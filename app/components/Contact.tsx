@@ -26,27 +26,45 @@ export default function Contact() {
           >
             <MapPin size="1.1em" aria-hidden="true" style={{ flexShrink: 0 }} />
             <span>
-              14 Rue Édouard Isambard
+              45 avenue de Rouen
               <br />
-              27120 Pacy-sur-Eure
+              27200 Vernon
             </span>
           </p>
         </address>
 
         <a
-          href="tel:0232342370"
+          href="tel:0743338128"
           style={{
             display: "inline-block",
             fontFamily: "var(--font-poppins)",
             fontWeight: 700,
             fontSize: "clamp(40px, 7.5vw, 104px)",
-            color: "#E8671A",
+            color: "#C8873A",
             textDecoration: "none",
             letterSpacing: "-0.03em",
             lineHeight: 1,
           }}
         >
-          02 32 34 23 70
+          07 43 33 81 28
+        </a>
+
+        <a
+          href="https://instagram.com/le45avenue"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            marginTop: 20,
+            fontFamily: "var(--font-poppins)",
+            fontWeight: 700,
+            fontSize: "clamp(14px, 1.8vw, 22px)",
+            color: "#777",
+            textDecoration: "none",
+            letterSpacing: "0.08em",
+          }}
+        >
+          @le45avenue
         </a>
       </div>
 
@@ -59,7 +77,7 @@ export default function Contact() {
         }}
       >
         <iframe
-          src="https://maps.google.com/maps?q=Pacy+Palace+14+Rue+Edouard+Isambard+27120+Pacy-sur-Eure&output=embed"
+          src="https://maps.google.com/maps?q=45+avenue+de+Rouen+27200+Vernon&output=embed"
           width="100%"
           height="100%"
           style={{
@@ -70,14 +88,15 @@ export default function Contact() {
           loading="lazy"
           allowFullScreen
           referrerPolicy="no-referrer-when-downgrade"
-          title="Localisation Pacy Palace"
+          title="Localisation Le 45 Avenue"
+          suppressHydrationWarning  
         />
       </div>
 
       {/* Maps link */}
       <div style={{ padding: "28px 10vw" }}>
         <a
-          href="https://maps.google.com/?q=Pacy+Palace+14+Rue+Edouard+Isambard+27120+Pacy-sur-Eure"
+          href="https://maps.google.com/?q=45+avenue+de+Rouen+27200+Vernon"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -91,7 +110,7 @@ export default function Contact() {
             textTransform: "uppercase",
             color: "#F0EBE3",
             textDecoration: "none",
-            borderBottom: "1px solid #E8671A",
+            borderBottom: "1px solid #C8873A",
             paddingBottom: 5,
           }}
         >

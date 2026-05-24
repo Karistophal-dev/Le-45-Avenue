@@ -50,21 +50,21 @@ export default function Hero() {
   return (
     <section
       className="hero-section"
-      style={{ position: "relative", background: "#111111", overflow: "hidden" }}
+      style={{ position: "relative", background: "#111111", overflow: "hidden", marginTop: 24 }}
     >
       {/* Texte */}
       <div className="hero-content">
         <h1
           className="hero-title"
           style={{
-            fontFamily: "var(--font-pacifico)",
+            fontFamily: "var(--font-bebas)",
             lineHeight: 0.88,
             letterSpacing: "-0.01em",
             userSelect: "none",
           }}
         >
-          <span style={{ color: "#F0EBE3", display: "block" }}>Pacy</span>
-          <span style={{ color: "#E8671A", display: "block" }}>Palace</span>
+          <span style={{ color: "#F0EBE3", display: "block" }}>Le 45</span>
+          <span style={{ color: "#C8873A", display: "block" }}>Avenue</span>
         </h1>
 
         <p
@@ -78,7 +78,7 @@ export default function Hero() {
             color: "#F5C842",
           }}
         >
-          Kebabs · Burgers · Tacos · Pacy-sur-Eure
+          Kebabs · Burgers · Tacos · Vernon
         </p>
 
         {status && (
@@ -91,7 +91,7 @@ export default function Hero() {
                 width: 8,
                 height: 8,
                 borderRadius: "50%",
-                background: status.open ? "#E8671A" : "#777",
+                background: status.open ? "#C8873A" : "#777",
                 flexShrink: 0,
               }}
               className={status.open ? "pulse-dot" : ""}
@@ -124,7 +124,7 @@ export default function Hero() {
 
         <div className="hero-ctas">
           <a
-            href="https://speedeats.fr/restaurants/38-pacy-palace"
+            href="https://www.ubereats.com/fr/store/le-45-avenue/y2VF8y85QWeChcLC-lcE6w"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -139,7 +139,7 @@ export default function Hero() {
               textTransform: "uppercase",
               color: "#111111",
               textDecoration: "none",
-              background: "#E8671A",
+              background: "#C8873A",
               padding: "16px 28px",
               lineHeight: 1,
             }}
@@ -149,7 +149,7 @@ export default function Hero() {
           </a>
 
           <a
-            href="tel:0232342370"
+            href="tel:0743338128"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -168,7 +168,7 @@ export default function Hero() {
             }}
           >
             <Phone size={12} strokeWidth={2.5} aria-hidden="true" />
-            02 32 34 23 70
+            07 43 33 81 28
           </a>
         </div>
 
@@ -194,7 +194,7 @@ export default function Hero() {
       <div className="hero-img-wrap">
         <Image
           src="/food/burger%20hero.png"
-          alt="Burger maison Pacy Palace — sauce, fromage fondu"
+          alt="Burger maison Le 45 Avenue — sauce, fromage fondu"
           fill
           sizes="(max-width: 767px) 100vw, 50vw"
           style={{ objectFit: "cover", objectPosition: "center" }}
