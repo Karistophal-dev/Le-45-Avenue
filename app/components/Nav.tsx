@@ -9,7 +9,7 @@ export default function Nav() {
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: "clamp(10px, 2vw, 16px) clamp(10px, 10vw, 10vw)",
+        padding: "clamp(8px, 1.5vw, 16px) clamp(16px, 10vw, 10vw)",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -18,8 +18,19 @@ export default function Nav() {
       }}
     >
       <a href="#" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-        <Image src="/logo.png" alt="Le 45 Avenue" width={72} height={72} style={{ objectFit: "cover", borderRadius: "50%" }} />
-        <span style={{ fontFamily: "var(--font-bebas)", fontSize: 26, color: "#F0EBE3", letterSpacing: "0.05em" }}>
+        <Image
+  src="/logo.png"
+  alt="Le 45 Avenue"
+  width={72}
+  height={72}
+  style={{
+    objectFit: "cover",
+    borderRadius: "50%",
+    width: "clamp(40px, 8vw, 72px)",
+    height: "clamp(40px, 8vw, 72px)",
+  }}
+/>
+<span style={{ fontFamily: "var(--font-bebas)", fontSize: "clamp(18px, 4vw, 26px)", color: "#F0EBE3", letterSpacing: "0.05em" }}>
           Le 45 Avenue
         </span>
       </a>
