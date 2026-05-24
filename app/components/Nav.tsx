@@ -18,7 +18,7 @@ export default function Nav() {
       }}
     >
       <a href="#" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-        <Image src="/logo.jpg" alt="Le 45 Avenue" width={64} height={64} style={{ objectFit: "cover", borderRadius: "50%" }} />
+        <Image src="/logo.png" alt="Le 45 Avenue" width={72} height={72} style={{ objectFit: "cover", borderRadius: "50%" }} />
         <span style={{ fontFamily: "var(--font-bebas)", fontSize: 26, color: "#F0EBE3", letterSpacing: "0.05em" }}>
           Le 45 Avenue
         </span>
